@@ -75,7 +75,7 @@ def sns_boxp_dinam_wdots (df_plot, option, title_): #боксплоты с то�
                 gap= 0.3, legend=False) #palette=base_colors, 
     sns.stripplot(data=df_plot, y=option, x = 'day', hue = 'group',  
                   linewidth = .8, dodge=True, 
-                  palette=pal, alpha=0.6, size=6)#, palette = "Set3") dodge=True palette=pal, 
+                  palette=pal, alpha=0.6, size=6)
     ax.tick_params(labelsize=12)
     ax.yaxis.grid(True)
     ax.set_title(title_, fontsize=14)
