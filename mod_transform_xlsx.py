@@ -119,25 +119,6 @@ def sns_boxp_dinam (df_plot, option, title_): #боксплоты без точ�
               fancybox=True, shadow=True, ncol=2) #fontsize = "14", loc='upper center', bbox_to_anchor=(0.47, -0.09), fancybox=True, shadow=True, ncol=2
     return (plt.show())
 
-def plotly_boxplots_dinamics (df_plot, option, title_, view): #боксплоты для каждой мыши по дням
-    if view == 'browser':
-        import plotly.io as pio
-        pio.renderers.default='browser'
-    if view == 'svg':
-        import plotly.io as pio
-        pio.renderers.default='svg'
-    
-    import plotly.express as px
-    from plotly.offline import plot
-    
-    fig = px.box(df_plot, x = 'day', y=option, color="number", 
-                 category_orders={ # replaces default order by column name
-                     "day": ["12", "15", "17", "22","24"]})
-    # fig.update_traces(width=0.1)
-    fig.update_layout(title_text=title_, height=800, width=1200)
-    fig.show()
-    return
-
 #%% несколько графиков с заголовками по одному xlsx файлу
 def join_lst(lst_): #объединяет список в строку
     str_ = ' '.join(map(str, lst_))
