@@ -289,9 +289,3 @@ for g in group:
     for option in lst_options:
         create_dinamics_plots (df_520_580, group=g, option=option, lambd = '520-580', rmse = 0.051, another = False)
 all_dinamics_plots_one_folder (root_path, rmse=0.051)
-
-df_plot = df_520_580 [df_520_580["RMSE"]<0.051]
-df_plot = df_plot[~df_plot.Name.str.contains('area3')]
-title_ =  'Динамика изменения'
-
-sns_boxp_dinam (df_plot, option, title_)
